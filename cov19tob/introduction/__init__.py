@@ -29,5 +29,7 @@ class Player(BasePlayer):
 class Introduction(Page):
     pass
 
+class Consent_IRB(Page):
+    pass
 
-page_sequence = [Introduction]
+page_sequence = [Introduction, Consent_IRB]
