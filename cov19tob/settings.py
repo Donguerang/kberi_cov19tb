@@ -6,6 +6,7 @@ SESSION_CONFIGS =[
         display_name='코로나19와 금연전략 설문조사',
         app_sequence=[
             'introduction',
+            'SQ',
         ],
         num_demo_participants=1,
     )

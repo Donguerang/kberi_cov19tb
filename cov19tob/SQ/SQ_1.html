@@ -1,0 +1,33 @@
+{{ extends "global/Page.html" }}
+{{ block title }}
+     <h3>1. 층화표집을 위한 선별질문</h3>
+{{ endblock }}
+{{ block content }}
+    <div class="alert border">
+        <p>
+             흡연자, 비흡연자 공통문항
+        </p>
+    </div>
+    <div class="alert border">{% formfield player.gender %}</div>
+    <div class="alert border">{% formfield player.born_year %}</div>
+    <div class="alert border">{% formfield player.tot_tobacco_pcs %}</div>
+    <div class="alert border">{% formfield player.recent_tobacco_yesno %}</div>
+    <div class="alert border">{% formfield player.recent_liq_tobacco_yesno %}</div>
+    <div class="alert border"><p>주로 사용하는 담배의 종류는 어떤 것입니까?(중복선택 가능)</p>
+        {% formfield player.main_tobacco_type_1 %}
+        {% formfield player.main_tobacco_type_2 %}
+        {% formfield player.main_tobacco_type_3 %}
+        {% formfield player.main_tobacco_type_4 %}
+        {% formfield player.main_tobacco_type_5 %}
+        {% formfield player.main_tobacco_type_6 %}
+        {% formfield player.main_tobacco_type_7 %}
+        {% formfield player.main_tobacco_type_8 %}
+        {% formfield player.main_tobacco_type_9 %}
+        {% formfield player.main_tobacco_type_10 %}
+        {% formfield player.main_tobacco_type_11 %}
+    </div>
+    <button class="btn btn-primary btn-large active">
+        다음
+    </button>
+
+{{ endblock }}
