@@ -36,7 +36,7 @@ class Player(BasePlayer):
     )
 
     tot_tobacco_pcs = models.IntegerField(
-        label = "지금까지 살아오는 동안 피운 일반담배(궐련)의 양은 총 얼마나 됩니까?",
+        label = "",
         widget = widgets.RadioSelect,
         choices = [
             [1, "5갑(100개비)미만"],
@@ -46,7 +46,7 @@ class Player(BasePlayer):
     )
 
     recent_tobacco_yesno = models.IntegerField(
-        label = "최근 1달 내에 궐련형 전자담배 (가열담배, (예)아이코스, 글로, 릴)를 피운 적이 있습니까?",
+        label = "",
         widget = widgets.RadioSelect,
         choices = [
             [1, "예"],
@@ -55,7 +55,7 @@ class Player(BasePlayer):
     )
 
     recent_liq_tobacco_yesno = models.IntegerField(
-        label = "최근 1달 내에 니코틴이 포함된 액상형 전자담배를 사용한 적이 있습니까?",
+        label = "",
         widget = widgets.RadioSelect,
         choices=[
             [1, "예"],

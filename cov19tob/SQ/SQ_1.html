@@ -10,9 +10,79 @@
     </div>
     <div class="alert border">{% formfield player.gender %}</div>
     <div class="alert border">{% formfield player.born_year %}</div>
-    <div class="alert border">{% formfield player.tot_tobacco_pcs %}</div>
-    <div class="alert border">{% formfield player.recent_tobacco_yesno %}</div>
-    <div class="alert border">{% formfield player.recent_liq_tobacco_yesno %}</div>
+    <div class="alert border">
+            <p>지금까지 살아오는 동안 피운 일반담배(궐련)의 양은 총 얼마나 됩니까?</p>
+           <p>일반담배 (궐련)이란, 잘게 썬 담뱃잎을 종이 등에 말아 불을 붙여 피우는 방식의 가장 보편적인 담배 제품입니다. 본 질문에는 일반담배를 피우시는 분들만 답해 주시고, 전자담배 등 다른 방식의 담배 제품을 사용하시는 분은 별도의 질문에 답해주시기 바랍니다. </p>
+         <img src="{% static "global/image1.png" %}" alt="image1" height="400px" width="600px">
+        {% formfield player.tot_tobacco_pcs %}</div>
+    <div class="alert border">
+        <p>최근 1달 내에 궐련형 전자담배 (가열담배, (예)아이코스, 글로, 릴)를 피운 적이 있습니까?</p>
+              <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+        overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+        font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+        </style>
+        <table class ="tg">
+        <thead>
+            <tr>
+                <th colspan="3">궐련형 전자담배 (가열담배, 예> 아이코스, 글로, 릴 등)
+    <br>- 액상 니코틴이 아닌 담배를 가열해서 에어로졸을 흡입하는 방식의 전자담배입니다</br></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tg-0lax" style="text-align: center">아이코스</td>
+                <td class="tg-0lax" style="text-align: center">글로</td>
+                <td class="tg-0lax" style="text-align: center">릴</td>
+            </tr>
+            <tr>
+                <td class="tg-0lax" style="text-align: center"><img src="{% static "global/image4.png" %}" alt="image4" height="150" width="150px"></td>
+                <td class="tg-0lax" style="text-align: center"><img src="{% static "global/image5.png" %}" alt="image5" height="150" width="150px"></td>
+                <td class="tg-0lax" style="text-align: center"><img src="{% static "global/image6.png" %}" alt="image6" height="150" width="150px"></td>
+            </tr>
+            <tr>
+                <td class="tg-0lax">- [충전기], [흡입기], [담배형태의 스틱]으로 구성
+    <br>- 1회 충전 시 1개의 스틱을 사용하여 약 14회 흡입 혹은 6분 간 사용 가능</br>
+    - 본체 가격은 12만원이며 스틱은 20개 당 4,300원임</td>
+                <td class="tg-0lax">- [본체-흡입기], [담배형태의 스틱]으로 구성
+                    <br>- 1회 충전으로 최대 30개비를 피울 수 있음</br>
+    - 본체가격은 9만원이며 스틱은 20개 당 4,300원</td>
+                <td class="tg-0lax">- [본체-흡입기], [담배형태의 스틱]으로 구성
+                    <br>- 1회 충전으로 최대 20개비를 피울 수 있음</br>
+    - 본체가격은 9만 5천원이며 스틱은 20개 당 4,300원</td>
+            </tr>
+        </tbody>
+        </table>
+        {% formfield player.recent_tobacco_yesno %}</div>
+    <div class="alert border">
+        <p>최근 1달 내에 니코틴이 포함된 액상형 전자담배를 사용한 적이 있습니까?</p>
+              <table class ="tg">
+        <thead>
+            <tr>
+                <th colspan="2">-액상형 전자담배
+                    <br>카트리지에 담긴 액체 니코틴 등을 초음파나 열로 기화시켜 증기를 흡입하는 방식의 전자담배</br> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="{% static "global/image2.png" %}" alt="image2" height="400" width="150px">
+    </td>
+                <td><img src="{% static "global/image3.png" %}" alt="image3" height="350" width="450px">
+    </td>
+            </tr>
+            <tr>
+                <td colspan="2">-[카트리지]. [무화기], [배터리]로 구성
+    <br>-니코틴 액상 용량은 주로 한 병에 20-30mL, 대락 4만원 정도</br>
+    -흡연량에 따라 다르지만 대략 한 병당 15-20일 정도 사용 가능</td>
+            </tr>
+        </tbody>
+        </table>
+        {% formfield player.recent_liq_tobacco_yesno %}</div>
     <div class="alert border"><p>주로 사용하는 담배의 종류는 어떤 것입니까?(중복선택 가능)</p>
         {% formfield player.main_tobacco_type_1 %}
         {% formfield player.main_tobacco_type_2 %}
