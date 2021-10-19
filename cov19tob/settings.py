@@ -7,6 +7,7 @@ SESSION_CONFIGS =[
         app_sequence=[
             'introduction',
             'SQ',
+            'OnlineSurvey',
         ],
         num_demo_participants=1,
     )
