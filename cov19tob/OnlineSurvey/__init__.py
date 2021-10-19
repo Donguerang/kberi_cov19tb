@@ -45,9 +45,15 @@ class Player(BasePlayer):
         ]
     )
 
-    born_year = models.IntegerField(
-        label = "귀하의 출생년도는 몇 년도입니까?",
-        choices = range(2001,1962,-1)
+    marriage_stat = models.IntegerField(
+        label = "귀하의 혼인상태를 선택해주십시오",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "결혼 안함"],
+            [2, "결혼함"],
+            [3, "이혼/사별함"],
+            [4, "기타"],
+        ]
     )
 
     tot_tobacco_pcs = models.IntegerField(
@@ -140,7 +146,7 @@ class BQ_1(Page):
     form_model = 'player'
     form_fields = [
         'region',
-        'born_year',
+        'marriage_stat',
         'tot_tobacco_pcs',
         'recent_tobacco_yesno',
         'recent_liq_tobacco_yesno',
