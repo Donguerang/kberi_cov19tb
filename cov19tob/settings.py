@@ -10,6 +10,24 @@ SESSION_CONFIGS =[
             'OnlineSurvey',
         ],
         num_demo_participants=1,
+    ),
+    dict(
+        name='SQ',
+        display_name='SQ(embrain)',
+        app_sequence=[
+            # 'introduction',
+            'SQ',
+            # 'OnlineSurvey',
+        ],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='OnlineSurvey',
+        display_name='인구학적질문(OnlineSurvey app)',
+        app_sequence=[
+            'OnlineSurvey',
+        ],
+        num_demo_participants=1,
     )
     ]
 
