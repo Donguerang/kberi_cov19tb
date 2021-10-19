@@ -8,13 +8,13 @@
              흡연자, 비흡연자 공통문항
         </p>
     </div>
-    <div class="alert border">{% formfield player.gender %}</div>
-    <div class="alert border">{% formfield player.born_year %}</div>
+    <div class="alert border">{{ formfield 'gender' }}</div>
+    <div class="alert border">{{ formfield 'born_year' }}</div>
     <div class="alert border">
             <p>지금까지 살아오는 동안 피운 일반담배(궐련)의 양은 총 얼마나 됩니까?</p>
            <p>일반담배 (궐련)이란, 잘게 썬 담뱃잎을 종이 등에 말아 불을 붙여 피우는 방식의 가장 보편적인 담배 제품입니다. 본 질문에는 일반담배를 피우시는 분들만 답해 주시고, 전자담배 등 다른 방식의 담배 제품을 사용하시는 분은 별도의 질문에 답해주시기 바랍니다. </p>
-         <img src="{% static "global/image1.png" %}" alt="image1" height="400px" width="600px">
-        {% formfield player.tot_tobacco_pcs %}</div>
+         <img src="{{ static "global/image1.png" }}" alt="image1" height="400px" width="600px">
+        {{ formfield 'tot_tobacco_pcs' }}</div>
     <div class="alert border">
         <p>최근 1달 내에 궐련형 전자담배 (가열담배, (예)아이코스, 글로, 릴)를 피운 적이 있습니까?</p>
               <style type="text/css">
@@ -41,9 +41,9 @@
                 <td class="tg-0lax" style="text-align: center">릴</td>
             </tr>
             <tr>
-                <td class="tg-0lax" style="text-align: center"><img src="{% static "global/image4.png" %}" alt="image4" height="150" width="150px"></td>
-                <td class="tg-0lax" style="text-align: center"><img src="{% static "global/image5.png" %}" alt="image5" height="150" width="150px"></td>
-                <td class="tg-0lax" style="text-align: center"><img src="{% static "global/image6.png" %}" alt="image6" height="150" width="150px"></td>
+                <td class="tg-0lax" style="text-align: center"><img src="{{ static "global/image4.png" }}" alt="image4" height="150" width="150px"></td>
+                <td class="tg-0lax" style="text-align: center"><img src="{{ static "global/image5.png" }}" alt="image5" height="150" width="150px"></td>
+                <td class="tg-0lax" style="text-align: center"><img src="{{ static "global/image6.png" }}" alt="image6" height="150" width="150px"></td>
             </tr>
             <tr>
                 <td class="tg-0lax">- [충전기], [흡입기], [담배형태의 스틱]으로 구성
@@ -58,7 +58,7 @@
             </tr>
         </tbody>
         </table>
-        {% formfield player.recent_tobacco_yesno %}</div>
+        {{ formfield 'recent_tobacco_yesno' }}</div>
     <div class="alert border">
         <p>최근 1달 내에 니코틴이 포함된 액상형 전자담배를 사용한 적이 있습니까?</p>
               <table class ="tg">
@@ -70,9 +70,9 @@
         </thead>
         <tbody>
             <tr>
-                <td><img src="{% static "global/image2.png" %}" alt="image2" height="400" width="150px">
+                <td><img src="{{ static "global/image2.png" }}" alt="image2" height="400" width="150px">
     </td>
-                <td><img src="{% static "global/image3.png" %}" alt="image3" height="350" width="450px">
+                <td><img src="{{ static "global/image3.png" }}" alt="image3" height="350" width="450px">
     </td>
             </tr>
             <tr>
@@ -82,19 +82,19 @@
             </tr>
         </tbody>
         </table>
-        {% formfield player.recent_liq_tobacco_yesno %}</div>
+        {{ formfield 'recent_liq_tobacco_yesno' }}</div>
     <div class="alert border"><p>주로 사용하는 담배의 종류는 어떤 것입니까?(중복선택 가능)</p>
-        {% formfield player.main_tobacco_type_1 %}
-        {% formfield player.main_tobacco_type_2 %}
-        {% formfield player.main_tobacco_type_3 %}
-        {% formfield player.main_tobacco_type_4 %}
-        {% formfield player.main_tobacco_type_5 %}
-        {% formfield player.main_tobacco_type_6 %}
-        {% formfield player.main_tobacco_type_7 %}
-        {% formfield player.main_tobacco_type_8 %}
-        {% formfield player.main_tobacco_type_9 %}
-        {% formfield player.main_tobacco_type_10 %}
-        {% formfield player.main_tobacco_type_11 %}
+        {{ formfield 'main_tobacco_type_1' }}
+        {{ formfield 'main_tobacco_type_2' }}
+        {{ formfield 'main_tobacco_type_3' }}
+        {{ formfield 'main_tobacco_type_4' }}
+        {{ formfield 'main_tobacco_type_5' }}
+        {{ formfield 'main_tobacco_type_6' }}
+        {{ formfield 'main_tobacco_type_7' }}
+        {{ formfield 'main_tobacco_type_8' }}
+        {{ formfield 'main_tobacco_type_9' }}
+        {{ formfield 'main_tobacco_type_10' }}
+        {{ formfield 'main_tobacco_type_11' }}
     </div>
     <button class="btn btn-primary btn-large active">
         다음
