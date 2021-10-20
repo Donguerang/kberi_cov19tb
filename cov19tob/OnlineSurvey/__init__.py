@@ -104,7 +104,7 @@ class BQ_1(Page):
         'region',
         'marriage_stat',
         'graduated_level',
-        'vocation'
+        'vocation',
         'vocation_op'
 
     ]

@@ -3,13 +3,14 @@
      <h3>2. 기초설문 </h3>
 {{ endblock }}
 
+
 {{ block app_scripts }}
 <script>
     $(document).ready(function(){
-        op_checker("vocation", "vocation_op");
+        op_checker("vocation_10", "vocation_op");
     })
 </script>
-
+{{ endblock }}
 
 {{ block content }}
     <div class="alert border">
@@ -22,7 +23,6 @@
     <div class="alert border">{{ formfield 'graduated_level' }}</div>
     <div class="alert border">{{ formfield 'vocation' }} </div>
     <div class="alert border">{{ formfield 'vocation_op' }} </div>
-
 
     <button class="btn btn-primary btn-large active">
         다음
