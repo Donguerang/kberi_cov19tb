@@ -22,9 +22,9 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     region = models.IntegerField(
-        label = "귀하의 거주지역을 선택해주세요.",
-        widget = widgets.RadioSelect,
-        choices = [
+        label="귀하의 거주지역을 선택해주세요.",
+        widget=widgets.RadioSelect,
+        choices=[
             [1, "서울"],
             [2, "인천"],
             [3, "경기도"],
@@ -44,10 +44,8 @@ class Player(BasePlayer):
             [17, "제주도"]
         ]
     )
-
-
     marriage_stat = models.IntegerField(
-        label = "귀하의 혼인상태를 선택해주십시오",
+        label="귀하의 혼인상태를 선택해주십시오",
         widget=widgets.RadioSelect,
         choices=[
             [1, "결혼 안함"],
@@ -56,9 +54,8 @@ class Player(BasePlayer):
             [4, "기타"]
         ]
     )
-
     graduated_level = models.IntegerField(
-        label = "귀하의 최종 학력을 선택해주세요",
+        label="귀하의 최종 학력을 선택해주세요",
         widget=widgets.RadioSelect,
         choices=[
             [1, "무학"],
@@ -69,9 +66,8 @@ class Player(BasePlayer):
             [6, "대학원 수료 이상"]
         ]
     )
-
     vocation = models.IntegerField(
-        label = "귀하의 직업을 선택해주세요",
+        label="귀하의 직업을 선택해주세요",
         widget=widgets.RadioSelect,
         choices=[
             [1, "관리자"],
@@ -87,11 +83,20 @@ class Player(BasePlayer):
             [11, "기타(직접입력)"]
         ]
     )
-
     vocation_op = models.StringField(
         label="",
         blank=True,
     )
+    income = models.IntegerField(
+        label="임금, 부동산 소득, 연금, 이자, 정부 보조금, 친척이나 자녀들의 용돈 등 모든 수입을 합쳐 최근 1년 동안 가구의 총 소득은 대략 얼마입니까? 만일 연간소득을 대답하기 어려운 경우 월 평균 액수를 말씀해 주십시오",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "연_______만원"],
+            [2, "월_______만원"],
+        ]
+    )
+
+
 
 
 
@@ -105,8 +110,8 @@ class BQ_1(Page):
         'marriage_stat',
         'graduated_level',
         'vocation',
-        'vocation_op'
-
+        'vocation_op',
+        'income',
     ]
 
 
