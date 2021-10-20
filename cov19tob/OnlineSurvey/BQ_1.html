@@ -2,6 +2,15 @@
 {{ block title }}
      <h3>2. 기초설문 </h3>
 {{ endblock }}
+
+{{ block app_scripts }}
+<script>
+    $(document).ready(function(){
+        op_checker("vocation", "vocation_op");
+    })
+</script>
+
+
 {{ block content }}
     <div class="alert border">
         <p>
@@ -10,7 +19,9 @@
     </div>
     <div class="alert border">{{ formfield 'region' }}</div>
     <div class="alert border">{{ formfield 'marriage_stat' }}</div>
-
+    <div class="alert border">{{ formfield 'graduated_level' }}</div>
+    <div class="alert border">{{ formfield 'vocation' }} </div>
+    <div class="alert border">{{ formfield 'vocation_op' }} </div>
 
 
     <button class="btn btn-primary btn-large active">
