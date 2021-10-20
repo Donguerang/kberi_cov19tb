@@ -36,7 +36,7 @@ class Player(BasePlayer):
     )
 
     tot_tobacco_pcs = models.IntegerField(
-        label = "",
+        label ='',
         widget = widgets.RadioSelect,
         choices = [
             [1, "5갑(100개비)미만"],
@@ -46,7 +46,7 @@ class Player(BasePlayer):
     )
 
     recent_tobacco_yesno = models.IntegerField(
-        label = "",
+        label = '',
         widget = widgets.RadioSelect,
         choices = [
             [1, "예"],
@@ -55,7 +55,7 @@ class Player(BasePlayer):
     )
 
     recent_liq_tobacco_yesno = models.IntegerField(
-        label = "",
+        label = '',
         widget = widgets.RadioSelect,
         choices=[
             [1, "예"],
