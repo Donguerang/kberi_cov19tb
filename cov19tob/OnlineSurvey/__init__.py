@@ -63,6 +63,23 @@ class BQ_1(Page):
     form_fields = [
         'region',
         'marriage_stat',
+<<<<<<< HEAD
+=======
+        # 'tot_tobacco_pcs',
+        # 'recent_tobacco_yesno',
+        # 'recent_liq_tobacco_yesno',
+        # 'main_tobacco_type_1',
+        # 'main_tobacco_type_2',
+        # 'main_tobacco_type_3',
+        # 'main_tobacco_type_4',
+        # 'main_tobacco_type_5',
+        # 'main_tobacco_type_6',
+        # 'main_tobacco_type_7',
+        # 'main_tobacco_type_8',
+        # 'main_tobacco_type_9',
+        # 'main_tobacco_type_10',
+        # 'main_tobacco_type_11',
+>>>>>>> 9dc3c5c876af3d6a603dc0ae5884788f143cfca9
     ]
 
 
