@@ -3,13 +3,6 @@
      <h3>2. 기초설문 </h3>
 {{ endblock }}
 
-{{ block app_scripts }}
-<script>
-    $(document).ready(function(){
-        op_checker("vocation", "vocation_op");
-    })
-</script>
-
 
 {{ block content }}
     <div class="alert border">
@@ -21,7 +14,7 @@
     <div class="alert border">{{ formfield 'marriage_stat' }}</div>
     <div class="alert border">{{ formfield 'graduated_level' }}</div>
     <div class="alert border">{{ formfield 'vocation' }} </div>
-    <div class="alert border">{{ formfield 'vocation_op' }} </div>
+    <div class="alert border">{{ formfield 'income' }} </div>
 
 
     <button class="btn btn-primary btn-large active">
