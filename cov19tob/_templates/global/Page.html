@@ -3,33 +3,11 @@
 
 {% block global_styles  %}
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
     <style>
-
-        .center-align {
-            padding: 10px;
-            border: 1px dashed gray;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        {#experimental style: end#}
-{#related to logical questions#}
-
-        .optional{
-            display: none;
-        }
-
-        .tableFixedHead {
-            overflow-y: auto;
-        }
         .tableFixedHead thead th {
             position: sticky;
             top:0;
         }
-
-{#logical questions: end#}
         .table > thead > tr > th {
             word-break: keep-all;
         }
@@ -37,172 +15,9 @@
         .table > tbody > tr > td {
             vertical-align: middle;
         }
-        .answer_mark {
-            display: none;
-            position: absolute;
-            left: 50vw;
-            top: 0vh;
-            margin-top: -125px;
-            margin-left: -125px;
-            font-size: 500px;
-            font-weight: normal;
-            color: red;
-        }
-        .wrong_key_box{
-            display:block;
-            opacity:0;
-            padding:20px;
-            background-color: #ffaa3f;
-            color:white;
-            margin-bottom: 15px;
-            position: relative;
-            border-style: solid;
-            border-width: 5px;
-            border-color: darkorange;
-        }
-        .next_block_box{
-            display: none;
-            padding: 20px;
-            background-color: yellow;
-            color:black;
-            margin-bottom: 15px;
-            position: absolute;
-            left: 20vw;
-            top: 25vw;
-            width: 60vw;
-            opacity: 0.8;
-            border-style: solid;
-            border-width: 5px;
-            border-color: darkslategrey;
-        }
-        .emph{
-            font-weight:bold;
-            color: #ff0000;
-        }
-        .black{
-            color: black;
-        }
-        #left_panel{
-            width:50%;
-            display:inline-block;
-            background-color:lightyellow;
-        }
-
-        #right_panel{
-            width:50%;
-            display:inline-block;
-            background-color:lightyellow;
-            flex-direction:column;
-            text-align:right;
-            justify-content:right;
-        }
-        #keyword{
-            display:block;
-            height:30vh;
-            font-size:20vh;
-            margin-top:0vh;
-        }
-
-        .stroop_button{
-            width: 20%;
-            border: 2px solid grey;
-        }
-
-        #button_area{
-            text-align: center;
-        }
-
-        .row_keyword{
-            text-align:center;
-        }
-
-        .keyword{
-            font-weight: bolder;
-        }
-        .main{
-            color: #5182Eb;
-        }
-        .sub{
-            color: #5182Eb;
-        }
-        .otree-timer{
-            display: none;
-        }
-
-        .blink{
-            animation: blink 1s linear infinite;
-        }
-        @keyframes blink{
-            0%{opacity: 0;}
-            50%{opacity: .5;}
-            100%{opacity: 1;}
-        }
-        .col-form-label{
-            background-color: rgba(229, 218, 24, 0.22);
-        }
     </style>
 {% endblock %}
 
 {% block global_scripts  %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="{% static 'global/extended_survey_kberi.js' %}">
-{# function for conditional op#}
-{#    const op_checker = (radio_id, op_id) => {#}
-        {#console.log("op_checker callsed")#}
-{#        let radio_tag = "#"+radio_id;#}
-{#        let op_tag = "#"+op_id;#}
-{#        var radio_parent = $(radio_tag).parent().parent().parent();#}
-{#        const set_current_status = () => {#}
-{#            if($(radio_tag).is(":checked")){#}
-{#                $(op_tag).show();#}
-{#            }else{#}
-{#                $(op_tag).hide();#}
-{#            }#}
-{#        };#}
-{#        set_current_status()#}
-{#        radio_parent.change(#}
-{#            function(){#}
-                {#console.log("start to check")#}
-{#                set_current_status()#}
-{#            }#}
-{#        )#}
-{#    };#}
-{##}
-{#    const show_after = (id, seconds) => {#}
-{#        const tag = "#"+id;#}
-{#        $(tag).delay(seconds*1000).fadeIn()#}
-{#    }#}
-{##}
-{#    const checkbox_hider = (checkbox_id, receiver_id) => {#}
-{#        let checkbox_tag = "#"+checkbox_id;#}
-{#        let receiver_tag = "#"+receiver_id;#}
-{#        $(checkbox_tag).change(#}
-{#            function(){#}
-{#                console.log(checkbox_tag+" changed");#}
-{#                if($(checkbox_tag).is(":checked")) {#}
-{#                    $(receiver_tag).val(0).hide()#}
-{#                }else{#}
-{#                    $(receiver_tag).show()#}
-{#                }#}
-{#            }#}
-{#        )#}
-{#    }#}
-{##}
-{#    const checkbox_shower = (checkbox_id, receiver_id) => {#}
-{#        let checkbox_tag = "#"+checkbox_id;#}
-{#        let receiver_tag = "#"+receiver_id;#}
-{#        $(checkbox_tag).change(#}
-{#            function(){#}
-{#                console.log(checkbox_tag+" changed");#}
-{#                if($(checkbox_tag).is(":checked")) {#}
-{#                    $(receiver_tag).show()#}
-{#                }else{#}
-{#                    $(receiver_tag).hide()#}
-{#                }#}
-{#            }#}
-{#        )#}
-{#    }#}
-
-    </script>
+    <script src="{% static 'global/extended_survey_kberi.js' %}?a=5"></script>
 {% endblock %}
