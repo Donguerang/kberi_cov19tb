@@ -89,13 +89,20 @@ class Player(BasePlayer):
     )
     income = models.IntegerField(
         label="임금, 부동산 소득, 연금, 이자, 정부 보조금, 친척이나 자녀들의 용돈 등 모든 수입을 합쳐 최근 1년 동안 가구의 총 소득은 대략 얼마입니까? 만일 연간소득을 대답하기 어려운 경우 월 평균 액수를 말씀해 주십시오",
-        widget=widgets.RadioSelect,
-        choices=[
-            [1, "연_______만원"],
-            [2, "월_______만원"],
-        ]
+        widget = widgets.RadioSelect,
+        choices = [
+        [1, "연 소득"],
+        [2, "월 소득"],
+    ]
     )
-
+    income_year_op = models.StringField(
+        label="연 소득",
+        blank=True,
+    )
+    income_month_op = models.StringField(
+        label="월 소득",
+        blank=True,
+    )
 
 
 
@@ -112,6 +119,8 @@ class BQ_1(Page):
         'vocation',
         'vocation_op',
         'income',
+        'income_year_op',
+        'income_month_op',
     ]
 
 
