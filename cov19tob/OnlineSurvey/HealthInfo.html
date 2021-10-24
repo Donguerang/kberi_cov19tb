@@ -1,0 +1,40 @@
+{{ extends "global/Page.html" }}
+{{ block title }}
+     <h3>3. 건강정보 </h3>
+{{ endblock }}
+
+{{ block content }}
+    <div class="alert border">
+        <p>
+             흡연자, 비흡연자 공통문항
+        </p>
+    </div>
+
+    <div class="alert border">{{ formfield 'drink_yesno' }}</div>
+    <div class="alert border">{{ formfield 'drink_how_often' }}</div>
+    <div class="alert border">{{ formfield 'drink_how_much' }}</div>
+    <div class="alert border">{{ formfield 'strong_exercise_yesno' }}</div>
+    <div class="alert border">
+        평소 일주일 동안, 일과 관련한 강도높은 신체활동을 총 몇 시간이나 하십니까?<br>
+        일주일에 {{ formfield 'strong_exercise_hours'}}시간 {{formfield 'strong_exercise_mins'}}분</div>
+    <div class="alert border">{{ formfield 'walk_or_bike' }}</div>
+    <div class="alert border">
+        평소 일주일 동안, 스포츠, 운동 및 여가 활동을 총 몇 시간이나 하십니까?<br>
+        일주일에 {{ formfield 'sports_or_leisure_hours'}}시간 {{formfield 'sports_or_leisure_mins'}}분</div>
+    <div class="alert border">{{ formfield 'health_ok' }}</div>
+    <div class="alert border">{{ formfield 'discomfort_yesno' }}</div>
+    <div class="alert border">
+        최근 2주 동안 만성,급성질환 및 사고 중독 등으로 몸이 아프거나 불편을 느꼈던 날은 며칠입니까??<br>
+        {{ formfield 'discomfort_days'}}일</div>
+    <div class="alert border">{{ formfield 'stress_how_much' }}</div>
+    <div class="alert border">{{ formfield 'distress_yesno' }}</div>
+    <div class="alert border">{{ formfield 'suicide_thought_yesno' }}</div>
+    <div class="alert border">{{ formfield 'suicide_plan_yesno' }}</div>
+    <div class="alert border">{{ formfield 'suicide_tryout_yesno' }}</div>
+    <div class="alert border">{{ formfield 'mental_advice_yesno' }}</div>
+
+    <button class="btn btn-primary btn-large active">
+        다음
+    </button>
+
+{{ endblock }}

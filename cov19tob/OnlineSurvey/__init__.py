@@ -104,11 +104,160 @@ class Player(BasePlayer):
         blank=True,
     )
 
+    drink_yesno = models.IntegerField(
+        label = "지금까지 살아오면서 1잔 이상의 술을 마신 적이 있습니까? [제사, 차례 때 몇 모금 마셔본 것은 제외합니다.]",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "술을 마셔 본 적 없다"],
+            [2, "있다"],
+        ]
+    )
+
+    drink_how_often = models.IntegerField(
+        label = "술을 얼마나 자주 마십니까?",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "최근 1년간 전혀 마시지 않았다"],
+            [2, "한 달에 1번 미만"],
+            [3, "한 달에 1번 정도"],
+            [4, "한 달에 2~4번"],
+            [5, "일주일에 2~3번 정도"],
+            [6, "일주일에 4번 이상"],
+        ]
+    )
+
+    drink_how_much = models.IntegerField(
+        label = "한 번에 술을 얼마나 마십니까? [소주, 양주 구분없이 각각의 술잔으로 계산합니다. 단 캔맥주 1개(355cc)는 맥주 1.6잔과 같습니다.]",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "1~2잔"],
+            [2, "3~4잔"],
+            [3, "5~6잔"],
+            [4, "7~9잔"],
+            [5, "10잔 이상"],
+        ]
+    )
+
+    strong_exercise_yesno = models.IntegerField(
+        label = "본인의 일은 최소 10분 이상 계속 숨이 차거나 심장이 빠르게 뛰는 강도 높은 신체활동을 포함하고 있습니까? [강도 높은 신체활동: 건설 현장의 노동, 빠르게 걷기, 물건 나르기, 청소, 육아]",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "예"],
+            [2, "아니요"],
+        ]
+    )
 
 
+    strong_exercise_hours = models.IntegerField(
+        label = "",
+        choices = range(169)
+    )
 
+    strong_exercise_mins = models.IntegerField(
+        label = "",
+        choices = range(60)
+    )
 
+    walk_or_bike = models.IntegerField(
+        label = "평소 장소를 이동할 때 최소 10분 이상 계속 걷거나 자전거 이용을 하십니까?",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "예"],
+            [2, "아니요"],
+        ]
+    )
 
+    sports_or_leisure_hours = models.IntegerField(
+        label="",
+        choices=range(169)
+    )
+
+    sports_or_leisure_mins = models.IntegerField(
+        label="",
+        choices=range(60)
+    )
+
+    health_ok = models.IntegerField(
+        label = "평소에 ____님의 건강은 어떻다고 생각하십니까?",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "매우 좋음"],
+            [2, "좋음"],
+            [3, "보통"],
+            [4, "나쁨"],
+            [5, "매우 나쁨"],
+        ]
+    )
+
+    discomfort_yesno = models.IntegerField(
+        label = "최근 2주 동안 만성,급성질환 및 사고 중독 등으로 몸이 아프거나 불편을 느꼈던 적이 있습니까?",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "예"],
+            [2, "아니요"]
+        ]
+    )
+
+    discomfort_days = models.IntegerField(
+        label = "",
+        choices = range(15)
+    )
+
+    stress_how_much = models.IntegerField(
+        label  = "평소 일상생활 중에 스트레스를 어느 정도 느끼고 있습니까?",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "대단히 많이 느낀다"],
+            [2, "많이 느끼는 편이다"],
+            [3, "조금 느끼는 편이다"],
+            [4, "거의 느끼지 않는다"],
+        ]
+    )
+
+    distress_yesno = models.IntegerField(
+        label = "최근 1년 동안 연속적으로 2주 이상 일상생활에 지장이 있을 정도로 슬프거나 절망감 등을 느낀 적이 있습니까?",
+        widget = widgets.RadioSelect,
+        choices = [
+            [1, "예"],
+            [2, "아니요"]
+        ]
+    )
+
+    suicide_thought_yesno = models.IntegerField(
+        label = "최근 1년 동안 심각하게 자살을 생각한 적이 있습니까?",
+        widget = widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"]
+        ]
+    )
+
+    suicide_plan_yesno = models.IntegerField(
+        label="최근 1년 동안 자살하기 위해 구체적인 계획을 세운 적이 있습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"]
+        ]
+    )
+
+    suicide_tryout_yesno = models.IntegerField(
+        label="최근 1년 동안 실제로 자살시도를 해 본 적이 있습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"]
+        ]
+    )
+
+    mental_advice_yesno = models.IntegerField(
+        label = "최근 1년 동안 정신적인 문제 때문에 방문, 전화, 인터넷 등을 통해 상담을 받아본 적이 있습니까?",
+        widget = widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"]
+        ]
+    )
 # PAGES
 class BQ_1(Page):
     form_model = 'player'
@@ -123,8 +272,32 @@ class BQ_1(Page):
         'income_month_op',
     ]
 
+class HealthInfo(Page):
+        form_model = 'player'
+        form_fields = [
+            'drink_yesno',
+            'drink_how_often',
+            'drink_how_much',
+            'strong_exercise_yesno',
+            'strong_exercise_hours',
+            'strong_exercise_mins',
+            'walk_or_bike',
+            'sports_or_leisure_hours',
+            'sports_or_leisure_mins',
+            'health_ok',
+            'discomfort_yesno',
+            'discomfort_days',
+            'stress_how_much',
+            'distress_yesno',
+            'suicide_thought_yesno',
+            'suicide_plan_yesno',
+            'suicide_tryout_yesno',
+            'mental_advice_yesno',
+
+        ]
 
 
 
 
-page_sequence = [BQ_1]
+
+page_sequence = [BQ_1, HealthInfo]
