@@ -1,0 +1,29 @@
+{{ extends "global/Page.html" }}
+{{ block title }}
+     <h3> 4. 담배사용 – 일반담배(궐련형) </h3>
+{{ endblock }}
+
+{{ block content }}
+    <div class="alert border">
+        <p>
+             일반담배(궐련) 사용경험 있다고 응답한 경우 진행, 아닌 경우 다음 파트 진행
+        </p>
+    </div>
+
+    <div class="alert border">{{ formfield 'cigarette_current_use' }}</div>
+    <div class="alert border">{{ formfield 'cessation_time_cigarette' }}</div>
+    <div class="alert border">
+        처음으로 일반담배(궐련) 한 개비를 다 피운 시기는 언제입니까?
+        <br> 만 {{ formfield 'first_smoking_cigarette' }} 세 (0-99)
+    </div>
+    <div class="alert border">
+        매일 한 개비 이상의 일반담배(궐련)를 피운 시기는 언제입니까?
+        <br>만 {{ formfield 'smoking_usually_cigarette' }} 세 (0-99)</div>
+    <div class="alert border">
+        하루 평균 일반담배(궐련) 흡연량은 몇 개비 입니까?
+        <br>{{ formfield 'smoking_amount_cigarette' }} 개비</div>
+   <button class="btn btn-primary btn-large active">
+        다음
+    </button>
+
+{{ endblock }}

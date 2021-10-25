@@ -258,6 +258,36 @@ class Player(BasePlayer):
             [2, "아니요"]
         ]
     )
+
+    cigarette_current_use = models.IntegerField(
+        label="귀하께서는 일반담배(궐련) 사용 경험이 있다고 하셨습니다. 현재도 주로 사용하고 있습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "지금도 사용하고 있다 "],
+            [2, "이제는 사용하지 않고 있다"]
+        ]
+    )
+    cessation_time_cigarette = models.IntegerField(
+        label="<금연답변시> 앞서 선생님은 과거 일반담배(궐련)을 피웠으나 지금은 그만두셨다고 답변하셨습니다. 금연(궐련 중단)시기는 언제였습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "2020년 2월 이전(코로나 19 확산 이전)"],
+            [2, "2020년 2월 이후(코로나19 대유행 이후)"]
+        ]
+    )
+    first_smoking_cigarette = models.IntegerField(
+        label="",
+        choices = range(100)
+    )
+    smoking_usually_cigarette = models.IntegerField(
+        label="",
+        choices = range(100)
+    )
+    smoking_amount_cigarette = models.IntegerField(
+        label="",
+        choices = range(1000)
+    )
+
 # PAGES
 class BQ_1(Page):
     form_model = 'player'
@@ -297,7 +327,15 @@ class HealthInfo(Page):
         ]
 
 
+class TobaccoUsage_Cigarette(Page):
+    form_model = 'player'
+    form_fields = [
+        'cigarette_current_use',
+        'cessation_time_cigarette',
+        'first_smoking_cigarette',
+        'smoking_usually_cigarette',
+        'smoking_amount_cigarette',
+    ]
 
 
-
-page_sequence = [BQ_1, HealthInfo]
+page_sequence = [BQ_1, HealthInfo, TobaccoUsage_Cigarette]
