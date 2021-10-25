@@ -343,6 +343,67 @@ class Player(BasePlayer):
             [4, "31개비 이상"],
         ]
     )
+    smoking_morning_frequency_cigarette = models.IntegerField(
+        label="(과거 일반담배(궐련) 흡연자는 흡연당시 기준으로 작성) 아침에 일어나서 첫 몇 시간 동안 하루 중 다른 시간보다 더 자주 일반담배(궐련)를 피우십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+        ]
+    )
+    smoking_sick_usage_cigarette = models.IntegerField(
+        label="(과거 일반담배(궐련) 흡연자는 흡연당시 기준으로 작성) 몸이 아파 하루 종일 누워있을 때에도 일반담배(궐련)를 피우십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+        ]
+    )
+    smoking_after_corona_cigarette = models.IntegerField(
+        label="2020년 2월 전후(코로나19 유행전후)를 비교하면 일반담배(궐련) 사용량은 어떤 변화가 있었습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 줄었음"],
+            [2, "줄었음"],
+            [3, "변화없음"],
+            [4, "늘었음"],
+            [5, "매우 늘었음"],
+        ]
+    )
+    smoking_corona_increase_cigarette = models.IntegerField(
+        label="[증가답변시] 흡연량(일반담배 사용량) 증가이유는?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "스트레스가 증가해서"],
+            [2, "집에 있는 시간이 많아져서"],
+            [3, "집에 있는 시간이 늘면서 지루해져서"],
+            [4, "기타"],
+        ]
+    )
+    smoking_corona_decrease_cigarette = models.IntegerField(
+        label="[감소답변시] 흡연량(일반담배 사용량) 감소이유는?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "코로나19에 걸릴 것 같아서 (건강에 대한 우려)"],
+            [2, "일정이 변경되어서"],
+            [3, "비흡연자와 함께 있어서"],
+            [4, "코로나19에 흡연자가 더 취약한 것 같아서"],
+            [5, "기타"],
+        ]
+    )
+    smoking_corona_awareness_cigarette = models.IntegerField(
+        label="코로나19 유행 이후 일반담배(궐련) 흡연시 주변 사람을 의식하는 정도가 증가했습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 증가"],
+            [2, "증가"],
+            [3, "변화 없음"],
+            [4, "감소"],
+            [5, "매우 감소"],
+        ]
+    )
+
+
 
 # PAGES
 class BQ_1(Page):
@@ -400,6 +461,12 @@ class TobaccoUsage_Cigarette(Page):
         'smoking_area_cigarette',
         'smoking_tasty_cigarette',
         'smoking_amount_multiple_choice_cigarette',
+        'smoking_morning_frequency_cigarette',
+        'smoking_sick_usage_cigarette',
+        'smoking_after_corona_cigarette',
+        'smoking_corona_increase_cigarette',
+        'smoking_corona_decrease_cigarette',
+        'smoking_corona_awareness_cigarette',
     ]
 
 
