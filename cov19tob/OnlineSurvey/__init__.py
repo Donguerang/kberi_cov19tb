@@ -259,7 +259,7 @@ class Player(BasePlayer):
         ]
     )
 
-    cigarette_current_use = models.IntegerField(
+    current_use_cigarette = models.IntegerField(
         label="귀하께서는 일반담배(궐련) 사용 경험이 있다고 하셨습니다. 현재도 주로 사용하고 있습니까?",
         widget=widgets.RadioSelect,
         choices=[
@@ -286,6 +286,62 @@ class Player(BasePlayer):
     smoking_amount_cigarette = models.IntegerField(
         label="",
         choices = range(1000)
+    )
+    smoking_days_cigarette = models.IntegerField(
+        label="",
+        choices = range(31)
+    )
+    smoking_daily_amount_cigarette = models.IntegerField(
+        label="",
+        choices = range(1000)
+    )
+    smoking_period_year_cigarette = models.IntegerField(
+        label="",
+        choices = range(100)
+    )
+    smoking_period_month_cigarette = models.IntegerField(
+        label="",
+        choices = range(13)
+    )
+    smoking_previous_amount_cigarette = models.IntegerField(
+        label="",
+        choices = range(1000)
+    )
+    smoking_morning_cigarette = models.IntegerField(
+        label="(과거 일반담배(궐련) 흡연자는 흡연당시 기준으로 작성) 아침에 일어나서 얼마 만에 첫 일반담배(궐련)를 피우십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "5분 이내"],
+            [2, "6분~30분 사이"],
+            [3, "31분~1시간 사이"],
+            [4, "1시간 이후"],
+        ]
+    )
+    smoking_area_cigarette = models.IntegerField(
+        label="(과거 일반담배(궐련) 흡연자는 흡연당시 기준으로 작성) 금연구역(도서관, 극장, 병원 등)에서 일반담배(궐련)를 참기가 어렵습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+        ]
+    )
+    smoking_tasty_cigarette = models.IntegerField(
+        label="(과거 일반담배(궐련) 흡연자는 흡연당시 기준으로 작성) 하루 중 일반담배(궐련) 맛이 가장 좋은 때는 언제입니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "아침 첫 담배"],
+            [2, "그 외의 담배"],
+        ]
+    )
+    smoking_amount_multiple_choice_cigarette = models.IntegerField(
+        label="(과거 일반담배(궐련) 흡연자는 흡연당시 기준으로 작성) 하루에 보통 몇 개비나 피우십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "10개비 이하"],
+            [2, "11~20 개비"],
+            [3, "21~30 개비"],
+            [4, "31개비 이상"],
+        ]
     )
 
 # PAGES
@@ -330,11 +386,20 @@ class HealthInfo(Page):
 class TobaccoUsage_Cigarette(Page):
     form_model = 'player'
     form_fields = [
-        'cigarette_current_use',
+        'current_use_cigarette',
         'cessation_time_cigarette',
         'first_smoking_cigarette',
         'smoking_usually_cigarette',
         'smoking_amount_cigarette',
+        'smoking_days_cigarette',
+        'smoking_daily_amount_cigarette',
+        'smoking_period_year_cigarette',
+        'smoking_period_month_cigarette',
+        'smoking_previous_amount_cigarette',
+        'smoking_morning_cigarette',
+        'smoking_area_cigarette',
+        'smoking_tasty_cigarette',
+        'smoking_amount_multiple_choice_cigarette',
     ]
 
 
