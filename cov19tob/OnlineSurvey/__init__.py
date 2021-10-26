@@ -452,7 +452,7 @@ class Player(BasePlayer):
         choices=range(100)
     )
     smoking_nicotine_amount_vape = models.IntegerField(
-        label="1.1. 귀하가 현재 사용하는 또는 과거에 사용한 액상형 전자담배(쥴, 탱크형 등) 액상의 니코틴 농도(액상 1ml 기준 니코틴 함유량)는 얼마입니까? (1mg/ml=0.1%)",
+        label="귀하가 현재 사용하는 또는 과거에 사용한 액상형 전자담배(쥴, 탱크형 등) 액상의 니코틴 농도(액상 1ml 기준 니코틴 함유량)는 얼마입니까? (1mg/ml=0.1%)",
         widget=widgets.RadioSelect,
         choices=[
             [1, "니코틴 없음"],
@@ -565,7 +565,144 @@ class Player(BasePlayer):
             [5, "매우 감소"],
         ]
     )
+ # 궐련형 전자담배
 
+    smoking_current_usage_heat = models.IntegerField(
+        label="귀하께서는 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용 경험이 있다고 하셨습니다. 현재도 주로 사용하고 있습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "지금도 사용하고 있다"],
+            [2, "이제는 사용하지 않고 있다"],
+        ]
+    )
+    smoking_corona_cessation_heat = models.IntegerField(
+        label="금연(궐련형 전자담배 사용 중단)한지 얼마나 되었습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "2020년 2월 이전(코로나 19 확산 이전)"],
+            [2, "2020년 2월 이후(코로나19 대유행 이후)"],
+          ]
+    )
+    smoking_first_year_heat = models.IntegerField(
+        label="",
+        choices=range(100)
+    )
+    smoking_first_month_heat = models.IntegerField(
+        label="",
+        choices=range(13)
+    )
+    smoking_last_year_heat = models.IntegerField(
+        label="",
+        choices=range(100)
+    )
+    smoking_last_month_heat = models.IntegerField(
+        label="",
+        choices=range(13)
+    )
+    smoking_using_days_heat = models.IntegerField(
+        label="",
+        choices=range(31)
+    )
+    smoking_amount_heat = models.IntegerField(
+        label="",
+        choices=range(100)
+    )
+    smoking_morning_heat = models.IntegerField(
+        label="(과거 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 흡연자는 흡연당시 기준으로 작성) 아침에 일어나서 얼마 만에 첫 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 사용하십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "5분 이내"],
+            [2, "6분~30분 사이"],
+            [3, "31분~1시간 사이"],
+            [4, "1시간 이후"],
+        ]
+    )
+    smoking_area_heat = models.IntegerField(
+        label="(과거 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용자는 사용당시 기준으로 작성) 금연구역(도서관, 극장, 병원 등)에서 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 참기가 어렵습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+          ]
+    )
+
+    smoking_tasty_heat = models.IntegerField(
+        label="(과거 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용자는 사용당시 기준으로 작성) 하루 중 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 맛이 가장 좋은 때는 언제입니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "아침 첫 사용 시기"],
+            [2, "그 외의 사용 시기"],
+          ]
+    )
+    smoking_daily_amount_heat = models.IntegerField(
+        label="(과거 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용자는 사용당시 기준으로 작성) 하루에 보통 몇 개비를 사용하십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "10개비 이하"],
+            [2, "11~20개비"],
+            [3, "21~30개비"],
+            [4, "31개비 이상"],
+        ]
+    )
+    smoking_morning_frequency_heat = models.IntegerField(
+        label="(과거 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용자는 사용당시 기준으로 작성) 아침에 일어나서 첫 몇 시간 동안 하루 중 다른 시간보다 더 자주 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 사용하십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+          ]
+    )
+    smoking_sick_usage_heat = models.IntegerField(
+        label="(과거 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용자는 사용당시 기준으로 작성) 몸이 아파 하루 종일 누워있을 때에도 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 사용하십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+          ]
+    )
+    smoking_after_corona_heat = models.IntegerField(
+        label="2020년 2월 전후(코로나19 유행전후)를 비교하면 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용량은 어떤 변화가 있었습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 줄었음"],
+            [2, "줄었음"],
+            [3, "변화 없음"],
+            [4, "늘었음"],
+            [5, "매우 늘었음"],
+        ]
+    )
+    smoking_corona_increase_heat = models.IntegerField(
+        label="[증가답변시] 궐련형 전자담배 사용량 증가이유는?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "스트레스가 증가해서"],
+            [2, "집에 있는 시간이 많아져서"],
+            [3, "집에 있는 시간이 늘면서 지루해져서"],
+            [4, "기타"],
+        ]
+    )
+    smoking_corona_decrease_heat = models.IntegerField(
+        label="[감소답변시] 궐련형 전자담배 사용량 감소이유는?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "코로나19에 걸릴 것 같아서 (건강에 대한 우려)"],
+            [2, "일정이 변경되어서"],
+            [3, "비흡연자와 함께 있어서"],
+            [4, "코로나19에 흡연자가 더 취약한 것 같아서"],
+            [5, "기타"],
+        ]
+    )
+    smoking_corona_awareness_heat = models.IntegerField(
+        label="코로나19유행 이후 궐련형 전자담배 사용시 주변사람을 의식하는 정도가 증가했습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 증가"],
+            [2, "증가"],
+            [3, "변화 없음"],
+            [4, "감소"],
+            [5, "매우 감소"],
+        ]
+    )
 
     # PAGES
 class BQ_1(Page):
@@ -653,6 +790,28 @@ class TobaccoUsage_Vape(Page):
         'smoking_corona_decrease_vape',
         'smoking_corona_awareness_vape',
     ]
+class TobaccoUsage_HeatCigarette(Page):
+    form_model = 'player'
+    form_fields = [
+        'smoking_current_usage_heat',
+        'smoking_corona_cessation_heat',
+        'smoking_first_year_heat',
+        'smoking_first_month_heat',
+        'smoking_last_year_heat',
+        'smoking_last_month_heat',
+        'smoking_using_days_heat',
+        'smoking_amount_heat',
+        'smoking_morning_heat',
+        'smoking_area_heat',
+        'smoking_tasty_heat',
+        'smoking_daily_amount_heat',
+        'smoking_morning_frequency_heat',
+        'smoking_sick_usage_heat',
+        'smoking_after_corona_heat',
+        'smoking_corona_increase_heat',
+        'smoking_corona_decrease_heat',
+        'smoking_corona_awareness_heat',
+    ]
 
 
-page_sequence = [BQ_1, HealthInfo, TobaccoUsage_Cigarette, TobaccoUsage_Vape]
+page_sequence = [BQ_1, HealthInfo, TobaccoUsage_Cigarette, TobaccoUsage_Vape, TobaccoUsage_HeatCigarette]

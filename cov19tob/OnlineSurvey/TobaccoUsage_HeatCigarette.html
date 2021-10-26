@@ -1,0 +1,52 @@
+{{ extends "global/Page.html" }}
+{{ block title }}
+     <h3> 6. 담배사용 – 궐련형 전자담배 </h3>
+{{ endblock }}
+
+{{ block content }}
+    <div class="alert border">
+        <p>
+             일반담배(궐련) 사용경험 있다고 응답한 경우 진행, 아닌 경우 다음 파트 진행
+        </p>
+    </div>
+
+    <div class="alert border">{{ formfield 'smoking_current_usage_heat'}}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_cessation_heat' }}</div>
+    <div class="alert border">
+        귀하께서는 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 언제 시작하셨습니까?
+        <br> 20__{{ formfield 'smoking_first_year_heat' }} 년
+                {{ formfield 'smoking_first_month_heat' }} 월
+    </div>
+    <div class="alert border">
+       마지막으로 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 사용한 시기는 언제입니까?
+        <br> 20__{{ formfield 'smoking_last_year_heat' }} 년
+                {{ formfield 'smoking_last_month_heat' }} 월 → 최근 1달 이전일 경우 (마. 사용량) 문항으로 이동
+    </div>
+    <div class="alert border">
+       최근 1달 간 궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등) 사용일수
+        <br> {{ formfield 'smoking_using_days_heat' }} 일 (1-30)
+    </div>
+    <div class="alert border">
+        궐련형 전자담배(가열담배, 예: 아이코스, 글로, 릴 등)를 사용한 날 하루 평균 사용량
+        <br> {{ formfield  'smoking_amount_heat' }}개비
+    </div>
+
+    <div class="alert border">{{ formfield 'smoking_morning_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_area_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_tasty_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_daily_amount_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_morning_frequency_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_sick_usage_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_after_corona_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_increase_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_decrease_heat' }}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_awareness_heat' }}</div>
+
+
+
+
+   <button class="btn btn-primary btn-large active">
+        다음
+    </button>
+
+{{ endblock }}
