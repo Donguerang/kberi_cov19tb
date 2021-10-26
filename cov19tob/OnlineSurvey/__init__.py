@@ -19,6 +19,7 @@ class Subsession(BaseSubsession):
 class Group(BaseGroup):
     pass
 
+# BQ_1에 해당하는 질문"
 
 class Player(BasePlayer):
     region = models.IntegerField(
@@ -259,12 +260,15 @@ class Player(BasePlayer):
         ]
     )
 
-    current_use_cigarette = models.IntegerField(
+# 일반담배(궐련형) 담배에 해당하는 질문
+
+    smoking_current_usage_cigarette = models.IntegerField(
         label="귀하께서는 일반담배(궐련) 사용 경험이 있다고 하셨습니다. 현재도 주로 사용하고 있습니까?",
         widget=widgets.RadioSelect,
         choices=[
-            [1, "지금도 사용하고 있다 "],
-            [2, "이제는 사용하지 않고 있다"]
+            [1, "지금도 사용하고 있다"],
+            [2, "이제는 사용하지 않고 있다"],
+
         ]
     )
     cessation_time_cigarette = models.IntegerField(
@@ -402,6 +406,9 @@ class Player(BasePlayer):
             [5, "매우 감소"],
         ]
     )
+
+# 액상형 전자담배에 해당하는 질문
+
     smoking_current_usage_vape = models.IntegerField(
         label="귀하께서는 액상형 전자담배(가열담배, 예: 쥴, 탱크형 등) 사용 경험이 있다고 하셨습니다. 현재도 주로 사용하고 있습니까?",
         widget=widgets.RadioSelect,
@@ -419,33 +426,31 @@ class Player(BasePlayer):
             [2, "2020년 2월 이후 (코로나19 대유행 이후)"],
 
         ]
-    smoking_starting_year_vape = models.IntegerField(
+    )
+    smoking_first_year_vape = models.IntegerField(
         label="",
         choices=range(100)
-        ]
-
-    smoking_starting_month_vape = models.IntegerField(
+    )
+    smoking_first_month_vape = models.IntegerField(
         label="",
         choices=range(13)
-        ]
-
+    )
     smoking_last_year_vape = models.IntegerField(
         label="",
-        label="",
         choices=range(100)
-        ]
+    )
     smoking_last_month_vape = models.IntegerField(
         label="",
         choices=range(13)
-        ]
+    )
     smoking_using_days_vape = models.IntegerField(
         label="",
         choices=range(31)
-        ]
+    )
     smoking_amount_vape = models.IntegerField(
         label="",
         choices=range(100)
-        ]
+    )
     smoking_nicotine_amount_vape = models.IntegerField(
         label="1.1. 귀하가 현재 사용하는 또는 과거에 사용한 액상형 전자담배(쥴, 탱크형 등) 액상의 니코틴 농도(액상 1ml 기준 니코틴 함유량)는 얼마입니까? (1mg/ml=0.1%)",
         widget=widgets.RadioSelect,
@@ -457,46 +462,110 @@ class Player(BasePlayer):
             [5, "19mg/ml 이상"],
             [6, "잘 모름"],
         ]
+    )
     smoking_morning_vape = models.IntegerField(
-        label="1.1. (과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 아침에 일어나서 얼마 만에 첫 액상형 전자담배(쥴, 탱크형 등)를 사용하십니까?",
+        label="(과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 아침에 일어나서 얼마 만에 첫 액상형 전자담배(쥴, 탱크형 등)를 사용하십니까?",
         widget=widgets.RadioSelect,
         choices=[
-            [1, "2020년 2월 이전 (코로나19 확산 이전)"],
-            [2, "2020년 2월 이후 (코로나19 대유행 이후)"],
+            [1, "5분 이내"],
+            [2, "6분~30분 사이"],
+            [3, "31분~1시간 사이"],
+            [4, "1시간 이후"],
 
         ]
-    smoking_corona_cessation_vape = models.IntegerField(
-        label="앞서 선생님은 과거 액상형 전자담배를 사용했으나 지금은 그만두셨다고 답변하셨습니다. 금연(액상형 전자담배 사용 중단)시기는 언제였습니까?",
+    )
+    smoking_area_vape = models.IntegerField(
+        label="(과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 금연구역(도서관, 극장, 병원 등)에서 액상형 전자담배(쥴, 탱크형 등)를 참기가 어렵습니까?",
         widget=widgets.RadioSelect,
         choices=[
-            [1, "2020년 2월 이전 (코로나19 확산 이전)"],
-            [2, "2020년 2월 이후 (코로나19 대유행 이후)"],
-
-        ]
-    smoking_corona_cessation_vape = models.IntegerField(
-        label="앞서 선생님은 과거 액상형 전자담배를 사용했으나 지금은 그만두셨다고 답변하셨습니다. 금연(액상형 전자담배 사용 중단)시기는 언제였습니까?",
+            [1, "예"],
+            [2, "아니요"],
+       ]
+    )
+    smoking_tasty_vape = models.IntegerField(
+        label="(과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 하루 중 액상형 전자담배(쥴, 탱크형 등) 맛이 가장 좋은 때는 언제입니까?",
         widget=widgets.RadioSelect,
         choices=[
-            [1, "2020년 2월 이전 (코로나19 확산 이전)"],
-            [2, "2020년 2월 이후 (코로나19 대유행 이후)"],
+            [1, "아침 첫 사용시기"],
+            [2, "그 외의 사용시기"],
 
         ]
-    smoking_corona_cessation_vape = models.IntegerField(
-        label="앞서 선생님은 과거 액상형 전자담배를 사용했으나 지금은 그만두셨다고 답변하셨습니다. 금연(액상형 전자담배 사용 중단)시기는 언제였습니까?",
+    )
+    smoking_daily_frequency_vape = models.IntegerField(
+        label="(과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 하루에 보통 몇 번 사용하십니까?",
         widget=widgets.RadioSelect,
         choices=[
-            [1, "2020년 2월 이전 (코로나19 확산 이전)"],
-            [2, "2020년 2월 이후 (코로나19 대유행 이후)"],
+            [1, "10회 이하"],
+            [2, "11~20회"],
+            [3, "21~30회"],
+            [4, "31회 이상"],
 
         ]
-    smoking_corona_cessation_vape = models.IntegerField(
-        label="앞서 선생님은 과거 액상형 전자담배를 사용했으나 지금은 그만두셨다고 답변하셨습니다. 금연(액상형 전자담배 사용 중단)시기는 언제였습니까?",
+    )
+    smoking_morning_frequency_vape = models.IntegerField(
+        label="(과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 아침에 일어나서 첫 몇 시간 동안 하루 중 다른 시간보다 더 자주 액상형 전자담배(쥴, 탱크형 등)를 사용하십니까?",
         widget=widgets.RadioSelect,
         choices=[
-            [1, "2020년 2월 이전 (코로나19 확산 이전)"],
-            [2, "2020년 2월 이후 (코로나19 대유행 이후)"],
+            [1, "예"],
+            [2, "아니요"],
 
         ]
+    )
+    smoking_sick_usage_vape = models.IntegerField(
+        label="(과거 액상형 전자담배(쥴, 탱크형 등) 사용자는 사용당시 기준으로 작성) 몸이 아파 하루 종일 누워있을 때에도 액상형 전자담배(쥴, 탱크형 등)를 사용하십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "예"],
+            [2, "아니요"],
+
+        ]
+    )
+    smoking_after_corona_vape = models.IntegerField(
+        label="2020년 2월 전후(코로나19 유행전후)를 비교하면 액상형 전자 담배(쥴, 탱크형 등) 사용량은 어떤 변화가 있었습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 줄었음"],
+            [2, "줄었음"],
+            [3, "변화없음"],
+            [4, "늘었음"],
+            [5, "매우 늘었음"],
+
+        ]
+    )
+    smoking_corona_increase_vape = models.IntegerField(
+        label="[증가답변시] 액상형 전자담배 사용량 증가이유는?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "스트레스가 증가해서"],
+            [2, "집에 있는 시간이 많아져서"],
+            [3, "집에 있는 시간이 늘면서 지루해져서"],
+            [4, "기타"],
+
+        ]
+    )
+    smoking_corona_decrease_vape = models.IntegerField(
+        label="[감소답변시] 액상형 전자담배 감소이유는?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "코로나19에 걸릴 것 같아서 (건강에 대한 우려)"],
+            [2, "일정이 변경되어서"],
+            [3, "비흡연자와 함께 있어서"],
+            [4, "코로나19에 흡연자가 더 취약한 것 같아서"],
+            [5, "기타"],
+        ]
+    )
+    smoking_corona_awareness_vape = models.IntegerField(
+        label="코로나19유행 이후 액상형 전자담배 사용시 주변사람을 의식하는 정도가 증가했습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 증가"],
+            [2, "증가"],
+            [3, "변화 없음"],
+            [4, "감소"],
+            [5, "매우 감소"],
+        ]
+    )
+
 
     # PAGES
 class BQ_1(Page):
@@ -540,7 +609,7 @@ class HealthInfo(Page):
 class TobaccoUsage_Cigarette(Page):
     form_model = 'player'
     form_fields = [
-        'current_use_cigarette',
+        'smoking_current_usage_cigarette',
         'cessation_time_cigarette',
         'first_smoking_cigarette',
         'smoking_usually_cigarette',
@@ -564,7 +633,25 @@ class TobaccoUsage_Cigarette(Page):
 class TobaccoUsage_Vape(Page):
     form_model = 'player'
     form_fields = [
-        'current_use_cigarette',
+        'smoking_current_usage_vape',
+        'smoking_corona_cessation_vape',
+        'smoking_first_year_vape',
+        'smoking_first_month_vape',
+        'smoking_last_year_vape',
+        'smoking_last_month_vape',
+        'smoking_using_days_vape',
+        'smoking_amount_vape',
+        'smoking_nicotine_amount_vape',
+        'smoking_morning_vape',
+        'smoking_area_vape',
+        'smoking_tasty_vape',
+        'smoking_daily_frequency_vape',
+        'smoking_morning_frequency_vape',
+        'smoking_sick_usage_vape',
+        'smoking_after_corona_vape',
+        'smoking_corona_increase_vape',
+        'smoking_corona_decrease_vape',
+        'smoking_corona_awareness_vape',
     ]
 
 
