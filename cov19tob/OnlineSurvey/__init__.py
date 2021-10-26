@@ -703,6 +703,70 @@ class Player(BasePlayer):
             [5, "매우 감소"],
         ]
     )
+    # 코로나19 관련 경험
+
+    symptom_experience = models.IntegerField(
+        label="다음 중 코로나19 발생 이후 귀하가 경험한 증상은 무엇이 있습니까? (발열/ 마른기침/ 호흡곤란/ 과도한 피로감 등 코로나19 감염 여부와 무관)",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "발열"],
+            [2, "마른기침"],
+            [3, "호흡곤란"],
+            [4, "피로감"],
+            [5, "기타"],
+        ]
+    )
+    test_stat = models.IntegerField(
+        label="코로나19 검사 결과 양성 판정을 받은 적 있습니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "양성"],
+            [2, "음성"],
+            [3, "코로나 검사 받은 적 없음"],
+        ]
+    )
+    test_when = models.IntegerField(
+        label="코로나19 검사를 받은 적 있다면 언제 받으셨습니까 (가장 최근것 기준)?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "있다"],
+            [2, "없다"],
+        ]
+    )
+
+
+    #코로나19 조치 및 경제상태 변화
+
+    policy_adequateness = models.IntegerField(
+        label="귀하의 정부 (모든 단계) 가 코로나19 감염증과의 싸움을 위해 내놓은 조치들을 생각해볼 때, 이 조치들은 적절하다고 생각하십니까?",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "매우 적절하다"],
+            [2, "적절하다"],
+            [3, "보통이다"],
+            [4, "부적절하다"],
+            [5, "매우 부적절하다"],
+        ]
+    )
+    income_difference= models.IntegerField(
+        label="코로나19 유행 전(2019년말)과 비교했을 때 월수입의 변화가 있었습니까? 선생님이 속한 가정의 실질 수령 월수입 기준으로 작성해주십시요",
+        widget=widgets.RadioSelect,
+        choices=[
+            [1, "500만원 이상 감소"],
+            [2, "400만원~500만원 감소"],
+            [3, "300만원~400만원 감소"],
+            [4, "200만원~300만원 감소"],
+            [5, "100만원~200만원 감소"],
+            [6, "변화없음"],
+            [7, "100만원~200만원 증가"],
+            [8, "200만원~300만원 증가"],
+            [9, "300만원~400만원 증가"],
+            [10, "400만원~500만원 증가"],
+            [11, "500만원 이상 증가"],
+        ]
+    )
+
+
 
     # PAGES
 class BQ_1(Page):
@@ -812,6 +876,20 @@ class TobaccoUsage_HeatCigarette(Page):
         'smoking_corona_decrease_heat',
         'smoking_corona_awareness_heat',
     ]
+class CoronaExperience(Page):
+    form_model = 'player'
+    form_fields = [
+        'symptom_experience',
+        'test_stat',
+        'test_when',
+    ]
+class CoronaPolicy(Page):
+    form_model = 'player'
+    form_fields = [
+        'policy_adequateness',
+        'income_difference',
+    ]
 
 
-page_sequence = [BQ_1, HealthInfo, TobaccoUsage_Cigarette, TobaccoUsage_Vape, TobaccoUsage_HeatCigarette]
+
+page_sequence = [BQ_1, HealthInfo, TobaccoUsage_Cigarette, TobaccoUsage_Vape, TobaccoUsage_HeatCigarette, CoronaExperience, CoronaPolicy]

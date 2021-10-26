@@ -1,0 +1,23 @@
+{{ extends "global/Page.html" }}
+{{ block title }}
+     <h3> 8. 코로나19 – 코로나19 조치 및 경제상태 변화 </h3>
+{{ endblock }}
+
+{{ block content }}
+    <div class="alert border">
+        <p>
+             흡연자, 비흡연자 공통문항
+        </p>
+    </div>
+
+    <div class="alert border">{{ formfield 'policy_adequateness' }}</div>
+    <div class="alert border">{{ formfield 'income_difference' }}</div>
+
+
+
+
+   <button class="btn btn-primary btn-large active">
+        다음
+    </button>
+
+{{ endblock }}
