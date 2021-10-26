@@ -1,0 +1,56 @@
+{{ extends "global/Page.html" }}
+{{ block title }}
+     <h3> 4. 담배사용 – 일반담배(궐련형) </h3>
+{{ endblock }}
+
+{{ block content }}
+    <div class="alert border">
+        <p>
+             일반담배(궐련) 사용경험 있다고 응답한 경우 진행, 아닌 경우 다음 파트 진행
+        </p>
+    </div>
+
+    <div class="alert border">{{ formfield 'current_use_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'cessation_time_cigarette' }}</div>
+    <div class="alert border">
+        처음으로 일반담배(궐련) 한 개비를 다 피운 시기는 언제입니까?
+        <br> 만 {{ formfield 'first_smoking_cigarette' }} 세 (0-99)
+    </div>
+    <div class="alert border">
+        매일 한 개비 이상의 일반담배(궐련)를 피운 시기는 언제입니까?
+        <br>만 {{ formfield 'smoking_usually_cigarette' }} 세 (0-99)</div>
+    <div class="alert border">
+        하루 평균 일반담배(궐련) 흡연량은 몇 개비 입니까?
+        <br>{{ formfield 'smoking_amount_cigarette' }} 개비</div>
+    <div class="alert border">
+        최근 1달 동안 일반담배(궐련) 흡연일수는 며칠입니까?
+        <br>{{ formfield 'smoking_days_cigarette' }} 일 (1-30)</div>
+    <div class="alert border">
+        일반담배(궐련)를 흡연한 날 하루 평균 흡연량은 몇 개비 입니까?
+        <br>{{ formfield 'smoking_daily_amount_cigarette' }} 개비</div>
+    <div class="alert border">
+        과거 일반담배(궐련) 흡연 기간은 얼마나 되셨습니까?
+        <br>{{ formfield 'smoking_period_year_cigarette' }}년
+        <br>{{ formfield 'smoking_period_month_cigarette' }}개월</div>
+    <div class="alert border">
+        과거 일반담배(궐련)를 피울 때 하루 평균 흡연량은 얼마나 됩니까?
+        <br>{{ formfield 'smoking_previous_amount_cigarette' }} 개비</div>
+    <div class="alert border">{{ formfield 'smoking_morning_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_area_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_tasty_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_amount_multiple_choice_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_morning_frequency_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_sick_usage_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_after_corona_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_increase_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_decrease_cigarette' }}</div>
+    <div class="alert border">{{ formfield 'smoking_corona_awareness_cigarette' }}</div>
+
+
+
+
+   <button class="btn btn-primary btn-large active">
+        다음
+    </button>
+
+{{ endblock }}
